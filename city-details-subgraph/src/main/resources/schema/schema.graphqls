@@ -1,0 +1,15 @@
+type Query {
+    cities(namePrefix: String!): [CityDetails!]
+}
+
+type CityDetails {
+    id: ID
+    name: String
+    country: String
+    countryCode: String
+    region: String
+    regionCode: String
+    latitude: Float
+    longitude: Float
+    population: Int
+}

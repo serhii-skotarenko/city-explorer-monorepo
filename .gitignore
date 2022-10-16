@@ -10,6 +10,7 @@
 *.tar.gz
 *.rar
 hs_err_pid*
+.idea
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/**/usage.statistics.xml
@@ -93,5 +94,7 @@ dist
 **/build/
 !src/**/build/
 gradle-app.setting
-!gradle-wrapper.jar
+!**/gradle/gradle-wrapper.jar
 .gradletasknamecache
+gradlew
+gradlew.bat
