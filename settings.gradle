@@ -2,5 +2,7 @@ rootProject.name = 'city-explorer-monorepo'
 
 include ':city-details-subgraph'
 include ':geo-db-api-adapter-shared'
+include ':geo-db-api-adapter-server'
 
 project(':geo-db-api-adapter-shared').projectDir = new File('./geo-db-api-adapter/shared')
+project(':geo-db-api-adapter-server').projectDir = new File('./geo-db-api-adapter/server')
