@@ -1,7 +1,14 @@
 version: '2.1'
+
+executors:
+  java17:
+    docker:
+      - image: 'cimg/openjdk:17.0'
+
 orbs:
   gradle: circleci/gradle@3.0.0
 workflows:
   checkout-build-test:
     jobs:
-      - gradle/test
+      - gradle/test:
+          executor: java17
