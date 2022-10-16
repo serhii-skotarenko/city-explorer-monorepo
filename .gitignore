@@ -94,7 +94,5 @@ dist
 **/build/
 !src/**/build/
 gradle-app.setting
-!**/gradle/gradle-wrapper.jar
+!gradle-wrapper.jar
 .gradletasknamecache
-gradlew
-gradlew.bat

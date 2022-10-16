@@ -1,0 +1,3 @@
+rootProject.name = 'city-explorer-monorepo'
+
+include "city-details-subgraph"
