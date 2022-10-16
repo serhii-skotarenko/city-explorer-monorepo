@@ -96,5 +96,3 @@ dist
 gradle-app.setting
 !**/gradle/gradle-wrapper.jar
 .gradletasknamecache
-gradlew
-gradlew.bat
