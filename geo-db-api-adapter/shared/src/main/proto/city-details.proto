@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package com.example.grpc.geo.db.city;
+
+option java_multiple_files = true;
+option java_package = "com.city.explorer.geo.db.adapter.city";
+option java_outer_classname = "CityDetailsProto";
+
+service CityDetailsService {
+  rpc ListCityDetails (CityDetailsRequest) returns (CityDetailsResponse) {
+  }
+}
+
+message CityDetailsRequest {
+  string prefix = 1;
+}
+
+message CityDetails {
+  string id = 1;
+  string name = 2;
+  string country = 3;
+  string country_code = 4;
+  string region = 5;
+  string region_code = 6;
+  float latitude = 7;
+  float longitude = 8;
+  int32 population = 9;
+}
+
+message CityDetailsResponse {
+  repeated CityDetails data = 1;
+  int32 total_count = 2;
+}
