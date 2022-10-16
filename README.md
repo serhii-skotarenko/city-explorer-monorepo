@@ -1,3 +1,5 @@
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/serhii-skotarenko/city-explorer-monorepo/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/serhii-skotarenko/city-explorer-monorepo/tree/main)
+
 ## I want to cover next topics in this project
 1. DGS
 2. gRPC and Field Masks
