@@ -1,7 +1,8 @@
 package com.city.explorer.city.details.datafetchers;
 
-import com.city.explorer.city.details.generated.types.CityDetails;
+import com.city.explorer.city.details.services.CityDetailsServiceImpl;
 import com.city.explorer.city.details.services.ListCitiesServiceImpl;
+import com.city.explorer.geo.db.adapter.cities.list.City;
 import com.netflix.graphql.dgs.DgsQueryExecutor;
 import com.netflix.graphql.dgs.autoconfig.DgsAutoConfiguration;
 import org.junit.jupiter.api.Test;
@@ -23,19 +24,21 @@ class CitiesDataFetcherTest {
     @Autowired
     DgsQueryExecutor dgsQueryExecutor;
     @MockBean
-    ListCitiesServiceImpl cityDetailsService;
+    ListCitiesServiceImpl listCitiesService;
+    @MockBean
+    CityDetailsServiceImpl cityDetailsService;
 
     @Test
     void cities() {
-        when(cityDetailsService.findCities(anyString())).thenReturn(
+        when(listCitiesService.findCities(anyString())).thenReturn(
                 List.of(
-                        CityDetails.newBuilder()
-                                .id("1")
-                                .name("Dnipro")
+                        City.newBuilder()
+                                .setId("1")
+                                .setName("Dnipro")
                                 .build(),
-                        CityDetails.newBuilder()
-                                .id("2")
-                                .name("Dniprorudne")
+                        City.newBuilder()
+                                .setId("2")
+                                .setName("Dniprorudne")
                                 .build()
                 )
         );
