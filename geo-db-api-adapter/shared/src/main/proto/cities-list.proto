@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package com.city.explorer.geo.db.adapter.cities.list;
+
+option java_multiple_files = true;
+option java_package = "com.city.explorer.geo.db.adapter.cities.list";
+option java_outer_classname = "ListCitiesProto";
+
+service ListCitiesService {
+  rpc ListCities (ListCitiesRequest) returns (ListCitiesResponse) {
+  }
+}
+
+message ListCitiesRequest {
+  string prefix = 1;
+}
+
+message City {
+  string id = 1;
+  string name = 2;
+}
+
+message ListCitiesResponse {
+  repeated City data = 1;
+  int32 total_count = 2;
+}

@@ -1,13 +1,20 @@
-package com.city.explorer.geo.db.adapter.server.models;
+package com.city.explorer.geo.db.adapter.server.models.cities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.List;
+import java.math.BigDecimal;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CitiesResponse {
-    private List<CityDetails> data;
-    private Metadata metadata;
+public class CityDetailsResponse {
+    private CityDetails data;
+
+    public CityDetails getData() {
+        return data;
+    }
+
+    public void setData(CityDetails data) {
+        this.data = data;
+    }
 
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class CityDetails {
@@ -20,9 +27,11 @@ public class CitiesResponse {
         private String countryCode;
         private String region;
         private String regionCode;
-        private Float latitude;
-        private Float longitude;
+        private Integer elevationMeters;
+        private BigDecimal latitude;
+        private BigDecimal longitude;
         private Integer population;
+        private String timezone;
 
         public String getId() {
             return id;
@@ -96,19 +105,27 @@ public class CitiesResponse {
             this.regionCode = regionCode;
         }
 
-        public Float getLatitude() {
+        public Integer getElevationMeters() {
+            return elevationMeters;
+        }
+
+        public void setElevationMeters(Integer elevationMeters) {
+            this.elevationMeters = elevationMeters;
+        }
+
+        public BigDecimal getLatitude() {
             return latitude;
         }
 
-        public void setLatitude(Float latitude) {
+        public void setLatitude(BigDecimal latitude) {
             this.latitude = latitude;
         }
 
-        public Float getLongitude() {
+        public BigDecimal getLongitude() {
             return longitude;
         }
 
-        public void setLongitude(Float longitude) {
+        public void setLongitude(BigDecimal longitude) {
             this.longitude = longitude;
         }
 
@@ -119,34 +136,13 @@ public class CitiesResponse {
         public void setPopulation(Integer population) {
             this.population = population;
         }
-    }
 
-    @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class Metadata {
-        Integer totalCount;
-
-        public Integer getTotalCount() {
-            return totalCount;
+        public String getTimezone() {
+            return timezone;
         }
 
-        public void setTotalCount(Integer totalCount) {
-            this.totalCount = totalCount;
+        public void setTimezone(String timezone) {
+            this.timezone = timezone;
         }
-    }
-
-    public List<CityDetails> getData() {
-        return data;
-    }
-
-    public void setData(List<CityDetails> data) {
-        this.data = data;
-    }
-
-    public Metadata getMetadata() {
-        return metadata;
-    }
-
-    public void setMetadata(Metadata metadata) {
-        this.metadata = metadata;
     }
 }

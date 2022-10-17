@@ -3,6 +3,7 @@ grpc:
     port: 6565
 
 geo-db-api:
+  host: "https://wft-geo-db.p.rapidapi.com/v1/geo/"
   headers:
     api-key:
       name: X-RapidAPI-Key
