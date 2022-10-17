@@ -1,12 +1,10 @@
 package com.city.explorer.city.details.services;
 
-import com.city.explorer.city.details.generated.types.CityDetails;
+import com.city.explorer.geo.db.adapter.cities.details.CityDetails;
 import org.springframework.lang.NonNull;
-
-import java.util.List;
 
 public interface CityDetailsService {
 
-    List<CityDetails> findCities(@NonNull String prefix);
+    CityDetails getForCity(@NonNull String cityId);
 
 }

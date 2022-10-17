@@ -3,7 +3,6 @@ plugins {
     id 'idea'
     id 'org.springframework.boot' version '2.7.4'
     id 'io.spring.dependency-management' version '1.0.14.RELEASE'
-    id 'com.netflix.dgs.codegen' version '5.4.0'
 }
 
 group = 'com.city.explorer.city.details'
@@ -15,15 +14,13 @@ repositories {
 }
 
 dependencies {
+    implementation project(':geo-db-api-adapter-shared')
     implementation(platform('com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:5.3.0'))
     implementation 'com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'net.devh:grpc-client-spring-boot-starter:2.13.1.RELEASE'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-
-generateJava {
-    packageName = 'com.city.explorer.city.details.generated'
 }
 
 test {

@@ -1,10 +1,14 @@
 type Query {
-    cities(namePrefix: String!): [CityDetails!]
+    cities(namePrefix: String!): [City!]
+}
+
+type City {
+    id: ID!
+    name: String!
+    details: CityDetails
 }
 
 type CityDetails {
-    id: ID
-    name: String
     country: String
     countryCode: String
     region: String
