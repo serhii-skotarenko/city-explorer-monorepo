@@ -1,9 +1,11 @@
 rootProject.name = 'city-explorer-monorepo'
 
 include ':city-details-subgraph'
+include ':country-subgraph'
 include ':geo-db-api-shared'
 include ':geo-db-api-server'
 
 project(':city-details-subgraph').projectDir = new File('./projects/graphql/subgraphs/city-details-subgraph')
+project(':country-subgraph').projectDir = new File('./projects/graphql/subgraphs/country-subgraph')
 project(':geo-db-api-shared').projectDir = new File('./projects/api/geo-db-api/shared')
 project(':geo-db-api-server').projectDir = new File('./projects/api/geo-db-api/server')

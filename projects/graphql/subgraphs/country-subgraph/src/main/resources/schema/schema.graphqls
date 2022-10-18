@@ -1,0 +1,21 @@
+type Query {
+    country(id: ID!): Country
+    countries(nameFilter: String, limit: Int = 10, offset: Int = 0): CountriesPage!
+}
+
+type Country {
+    id: ID!
+    name: String!
+    capital: String
+    phoneCode: String
+    currencyIso: String
+    currencyName: String
+    flagImageUri: String
+    population: Int
+    area: Int
+}
+
+type CountriesPage {
+    items: [Country!]
+    totalItems: Int
+}
