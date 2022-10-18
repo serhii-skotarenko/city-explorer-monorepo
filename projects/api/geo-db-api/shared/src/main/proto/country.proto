@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package com.city.explorer.geo.db.adapter.countries.details;
+
+option java_multiple_files = true;
+option java_package = "com.city.explorer.geo.db.api.country";
+option java_outer_classname = "CountryProto";
+
+service CountryService {
+  rpc GetCountry (GetCountryRequest) returns (Country) {}
+  rpc ListCountries(ListCountriesRequest) returns (ListCountriesResponse) {}
+}
+
+message GetCountryRequest {
+  string id = 1;
+}
+
+message ListCountriesRequest {
+  string name_filter = 1;
+  int32 limit = 2;
+  int32 offset = 3;
+}
+
+message Country {
+  string id = 1;
+  string name = 2;
+  string capital = 3;
+  string phone_code = 4;
+  string currency_iso = 5;
+  string currency_name = 6;
+  string flag_image_uri = 7;
+  int64 population = 8;
+  int64 area = 9;
+}
+
+message ListCountriesResponse {
+  repeated Country items = 1;
+  int64 totalItems = 2;
+}

@@ -1,4 +1,4 @@
-package com.city.explorer.geo.db.api.services.cities;
+package com.city.explorer.geo.db.api.service.city;
 
 import com.city.explorer.geo.db.adapter.cities.list.ListCitiesRequest;
 import com.city.explorer.geo.db.adapter.cities.list.ListCitiesResponse;

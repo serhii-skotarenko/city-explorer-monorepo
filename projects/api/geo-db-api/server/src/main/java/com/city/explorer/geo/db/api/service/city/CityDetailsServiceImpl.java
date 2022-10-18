@@ -1,4 +1,4 @@
-package com.city.explorer.geo.db.api.services.cities;
+package com.city.explorer.geo.db.api.service.city;
 
 import com.city.explorer.geo.db.adapter.cities.details.CityDetails;
 import com.city.explorer.geo.db.adapter.cities.details.CityDetailsRequest;
