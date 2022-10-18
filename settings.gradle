@@ -4,6 +4,6 @@ include ':city-details-subgraph'
 include ':geo-db-api-shared'
 include ':geo-db-api-server'
 
-project(':city-details-subgraph').projectDir = new File('./projects/subgraphs/city-details-subgraph')
-project(':geo-db-api-shared').projectDir = new File('./projects/geo-db-api/shared')
-project(':geo-db-api-server').projectDir = new File('./projects/geo-db-api/server')
+project(':city-details-subgraph').projectDir = new File('./projects/graphql/subgraphs/city-details-subgraph')
+project(':geo-db-api-shared').projectDir = new File('./projects/api/geo-db-api/shared')
+project(':geo-db-api-server').projectDir = new File('./projects/api/geo-db-api/server')
